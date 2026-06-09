@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Syne', sans-serif;
+  background: #0f0f0f;
+  color: #f0ede6;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.container {
+  background: #1a1a1a;
+  border: 1px solid #2e2e2e;
+  border-radius: 16px;
+  padding: 2.5rem;
+  max-width: 480px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 1.8rem;
+  color: #f0ede6;
+  letter-spacing: -0.5px;
+}
+
+#resultado {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.linha {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.95rem;
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-left: 3px solid #7c3aed;
+  border-radius: 8px;
+  padding: 0.9rem 1.2rem;
+  color: #c4b5fd;
+  animation: fadeIn 0.4s ease forwards;
+  opacity: 0;
+}
+
+.linha.destaque { border-left-color: #10b981; color: #6ee7b7; }
+.linha.alerta    { border-left-color: #f59e0b; color: #fcd34d; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}

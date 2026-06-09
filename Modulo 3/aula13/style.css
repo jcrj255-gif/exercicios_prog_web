@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: #f5f0e8;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 1.5rem;
+}
+
+#turma {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card-aluno {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.2rem;
+  border: 2px solid transparent;
+  box-shadow: 4px 4px 0 #1a1a2e22;
+  transition: transform 0.2s;
+}
+
+.card-aluno:hover { transform: translateY(-4px); }
+.card-aluno.aprovado { border-color: #22c55e; }
+.card-aluno.reprovado { border-color: #ef4444; }
+
+.card-aluno .nome { font-weight: 700; font-size: 1rem; color: #1a1a2e; margin-bottom: 0.4rem; }
+.card-aluno .notas { font-size: 0.8rem; color: #666; margin-bottom: 0.5rem; }
+.card-aluno .media { font-size: 1.4rem; font-weight: 800; }
+.card-aluno.aprovado .media { color: #16a34a; }
+.card-aluno.reprovado .media { color: #dc2626; }
+
+.badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 99px;
+  margin-top: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge.ap { background: #dcfce7; color: #16a34a; }
+.badge.rp { background: #fee2e2; color: #dc2626; }
+
+.stats {
+  background: #1a1a2e;
+  color: #f5f0e8;
+  border-radius: 14px;
+  padding: 1.5rem 2rem;
+  font-size: 1rem;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-item span { font-size: 1.8rem; font-weight: 800; display: block; }

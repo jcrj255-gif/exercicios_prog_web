@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700;800&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --fire:     #FF6B35; --water:   #4A90E2; --grass:   #56A14B;
+  --electric: #F7D800; --psychic: #FF5FA0; --ice:     #6DC8F3;
+  --dragon:   #7038F8; --dark:    #5A5360; --fairy:   #FFB6C1;
+  --normal:   #A8A878; --fighting:#C03028; --flying:  #A890F0;
+  --poison:   #A040A0; --ground:  #E0C068; --rock:    #B8A038;
+  --bug:      #A8B820; --ghost:   #705898; --steel:   #B8B8D0;
+}
+
+body {
+  font-family: 'Lexend', sans-serif;
+  background: #1a1a2e;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.app { width: 100%; max-width: 440px; }
+
+header { margin-bottom: 1.5rem; }
+
+h1 { font-size: 2rem; font-weight: 800; color: #f0f0f0; margin-bottom: 1rem; text-align: center; }
+
+.busca { display: flex; gap: 0.6rem; margin-bottom: 0.8rem; }
+
+input {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.7rem 1rem;
+  border: 2px solid #2e2e4e;
+  background: #16213e;
+  color: #f0f0f0;
+  border-radius: 10px;
+  flex: 1;
+  outline: none;
+  transition: border-color 0.2s;
+}
+input:focus { border-color: #6366f1; }
+input::placeholder { color: #555; }
+
+button {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#btnBuscar { background: #6366f1; color: #fff; }
+#btnBuscar:hover { background: #4f46e5; }
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+#btnAnterior, #btnProximo {
+  background: #16213e;
+  color: #c4b5fd;
+  border: 2px solid #2e2e4e;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+}
+#btnAnterior:hover, #btnProximo:hover { background: #2e2e4e; }
+
+#numAtual { color: #888; font-size: 0.9rem; }
+
+/* Card do Pokémon */
+.poke-card {
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  animation: fadeUp 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.poke-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.05);
+  border-radius: inherit;
+}
+
+.poke-id { font-size: 0.9rem; font-weight: 700; opacity: 0.7; margin-bottom: 0.2rem; }
+.poke-nome {
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: capitalize;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  margin-bottom: 1rem;
+}
+
+.poke-img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4));
+  margin-bottom: 1rem;
+}
+
+.tipos { display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 1.5rem; }
+
+.tipo {
+  padding: 0.3rem 1rem;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.3);
+}
+
+.stats { text-align: left; }
+.stat { margin-bottom: 0.6rem; }
+.stat-header { display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 700; color: rgba(255,255,255,0.9); margin-bottom: 0.2rem; text-transform: uppercase; }
+.stat-bar-bg { background: rgba(0,0,0,0.25); border-radius: 99px; height: 8px; overflow: hidden; }
+.stat-bar    { height: 100%; border-radius: 99px; background: rgba(255,255,255,0.8); transition: width 0.8s ease; }
+
+.mensagem { text-align: center; padding: 3rem 1rem; color: #888; font-size: 1rem; }
+.erro { color: #f87171; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

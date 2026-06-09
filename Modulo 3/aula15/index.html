@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tarefas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <h1>✅ Minhas Tarefas</h1>
+
+    <form id="formTarefa">
+      <input type="text" id="inputTarefa" placeholder="Nova tarefa..." autocomplete="off" required>
+      <button type="submit">Adicionar</button>
+    </form>
+
+    <div class="busca">
+      <input type="text" id="inputBusca" placeholder="🔍 Buscar tarefas...">
+    </div>
+
+    <ul id="listaTarefas"></ul>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cards de Produtos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>🛍️ Produtos</h1>
+      <div class="acoes">
+        <button id="btnEletronicos">📱 Só Eletrônicos</button>
+        <button id="btnLimpar">🗑️ Limpar</button>
+      </div>
+    </header>
+
+    <!-- Desafio extra: inserir novo produto -->
+    <div class="form-novo">
+      <input type="text" id="inputNome" placeholder="Nome do produto">
+      <input type="number" id="inputPreco" placeholder="Preço (R$)" min="0">
+      <input type="text" id="inputCategoria" placeholder="Categoria">
+      <button id="btnAdicionar">+ Adicionar</button>
+    </div>
+
+    <div id="container"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

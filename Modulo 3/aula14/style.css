@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: #eef2ff;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.page { max-width: 960px; margin: 0 auto; }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+h1 { font-size: 1.8rem; font-weight: 800; color: #1e1b4b; }
+
+.acoes { display: flex; gap: 0.7rem; }
+
+button {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#btnEletronicos { background: #4f46e5; color: #fff; }
+#btnEletronicos:hover { background: #4338ca; }
+#btnEletronicos.ativo { background: #7c3aed; box-shadow: 0 0 0 3px #c4b5fd; }
+
+#btnLimpar { background: #fff; color: #dc2626; border: 2px solid #fecaca; }
+#btnLimpar:hover { background: #fee2e2; }
+
+.form-novo {
+  display: flex;
+  gap: 0.7rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.form-novo input {
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 0.6rem 1rem;
+  border: 2px solid #c7d2fe;
+  border-radius: 8px;
+  background: #fff;
+  flex: 1;
+  min-width: 140px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-novo input:focus { border-color: #6366f1; }
+
+#btnAdicionar { background: #10b981; color: #fff; }
+#btnAdicionar:hover { background: #059669; }
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.4rem;
+  box-shadow: 0 2px 12px #6366f115;
+  border: 2px solid #e0e7ff;
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: pop 0.3s ease;
+}
+
+.card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px #6366f122; }
+
+.card.oculto { display: none; }
+
+.card-categoria {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #6366f1;
+  margin-bottom: 0.5rem;
+}
+
+.card-nome { font-size: 1rem; font-weight: 700; color: #1e1b4b; margin-bottom: 0.8rem; }
+.card-preco { font-size: 1.4rem; font-weight: 800; color: #4f46e5; }
+
+@keyframes pop {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
